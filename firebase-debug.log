@@ -1,0 +1,87 @@
+[debug] [2022-05-21T16:04:04.960Z] ----------------------------------------------------------------------
+[debug] [2022-05-21T16:04:04.961Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --debug
+[debug] [2022-05-21T16:04:04.962Z] CLI Version:   11.0.0
+[debug] [2022-05-21T16:04:04.962Z] Platform:      darwin
+[debug] [2022-05-21T16:04:04.962Z] Node Version:  v14.19.0
+[debug] [2022-05-21T16:04:04.962Z] Time:          Sat May 21 2022 12:04:04 GMT-0400 (Eastern Daylight Time)
+[debug] [2022-05-21T16:04:04.962Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-21T16:04:05.011Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-21T16:04:05.012Z] > authorizing via signed-in user (eggert.jason@gmail.com)
+[debug] [2022-05-21T16:04:05.012Z] [iam] checking project gertdotcom for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-05-21T16:04:05.014Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gertdotcom:testIamPermissions [none]
+[debug] [2022-05-21T16:04:05.014Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gertdotcom:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-21T16:04:05.177Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gertdotcom:testIamPermissions 200
+[debug] [2022-05-21T16:04:05.177Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gertdotcom:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-21T16:04:05.178Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gertdotcom [none]
+[debug] [2022-05-21T16:04:05.409Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gertdotcom 200
+[debug] [2022-05-21T16:04:05.410Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gertdotcom {"projectId":"gertdotcom","projectNumber":"279469700840","displayName":"gertdotcom","name":"projects/gertdotcom","resources":{"hostingSite":"gertdotcom"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'gertdotcom'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-05-21T16:04:05.413Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gertdotcom [none]
+[debug] [2022-05-21T16:04:05.571Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gertdotcom 200
+[debug] [2022-05-21T16:04:05.572Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gertdotcom {"projectId":"gertdotcom","projectNumber":"279469700840","displayName":"gertdotcom","name":"projects/gertdotcom","resources":{"hostingSite":"gertdotcom"},"state":"ACTIVE"}
+[debug] [2022-05-21T16:04:05.579Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/279469700840/sites/gertdotcom/versions [none]
+[debug] [2022-05-21T16:04:05.579Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/279469700840/sites/gertdotcom/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-05-21T16:04:06.093Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/279469700840/sites/gertdotcom/versions 200
+[debug] [2022-05-21T16:04:06.093Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/279469700840/sites/gertdotcom/versions {"name":"projects/279469700840/sites/gertdotcom/versions/3694e3be5524ba38","status":"CREATED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[gertdotcom]: beginning deploy... 
+[info] i  hosting[gertdotcom]: found 18 files in build 
+[debug] [2022-05-21T16:04:06.118Z] [hosting] uploading with 200 concurrency
+[debug] [2022-05-21T16:04:06.464Z] [hosting] hash cache [YnVpbGQ] stored for 18 files
+[debug] [2022-05-21T16:04:06.465Z] [hosting][hash queue][FINAL] {"max":337,"min":9,"avg":34.27777777777778,"active":0,"complete":18,"success":18,"errored":0,"retried":0,"total":18,"elapsed":343}
+[debug] [2022-05-21T16:04:06.465Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/279469700840/sites/gertdotcom/versions/3694e3be5524ba38:populateFiles [none]
+[debug] [2022-05-21T16:04:06.465Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/279469700840/sites/gertdotcom/versions/3694e3be5524ba38:populateFiles {"files":{"/404.html":"05cbc6f94d7a69ce2e29646eab13be2c884e61ba93e3094df5028866876d18b3","/favicon.ico":"b72f7455f00e4e58792d2bca892abb068e2213838c0316d6b7a0d6d16acd1955","/index.html":"6f98a639f3a486b43f0305fecc1312a726c1951e22ce9fde71c8717bbe97bbc2","/logo192.png":"caff018b7f1e8fd481eb1c50d75b0ef236bcd5078b1d15c8bb348453fee30293","/robots.txt":"391d14b3c2f8c9143a27a28c7399585142228d4d1bdbe2c87ac946de411fa9a2","/triangle.svg":"8fda63ad4ba0b6a27039800e40551ca70bf63faa8873ccdcd5905b716a63a6b8","/logo512.png":"191fc21360b4ccfb1cda11a1efb97f489ed22672ca83f4064316802bbfdd750e","/static/css/main.e6c13ad2.css":"3e50f5e92915159fd2c8de23f1536cfb9f445223478cfa70edb3a6fbfe5dbf03","/asset-manifest.json":"d9455dab41bfac2ca3bb136b25a69b8622d135096ac9bc64bfd7b04ceb67f603","/static/css/main.e6c13ad2.css.map":"d99304e41fcd2e6d3aadd9df8d45fbb4b7935a1f7a03b1a272a8f0477725a7fa","/manifest.json":"78f646e1aa712fea0efd557151a952127a3a9e0d028646aba9c2b705ccd59962","/static/js/main.e99d7e0f.js.LICENSE.txt":"01810e2e712b84eeb97e194b642f5cac340722413bd2fb650283fea2566458e8","/static/js/787.dd4029b4.chunk.js":"c58e241fd93d19dd9818ee37efaec02c8943c3a4e061a7619f3f9d9dd4d6fef0","/static/js/787.dd4029b4.chunk.js.map":"74b84af47b1f895f23108ed64f90b9fcbfa0787eb11834c216aa9a43d316a424","/SurfaceImperfections003_1K_var1.jpg":"4dab628449095bba5df414ec1984eb2090a67749d948156e342db5c7cb253b65","/SurfaceImperfections003_1K_Normal.jpg":"9eb8f4cddb4c0e458fa9032d9fddf93b2db6723fffbf28c92614f4d24f1c4c4f","/static/js/main.e99d7e0f.js":"b0a6a4cd92e5bda72c970e36ec5fe35c4c03789638ed37a1136cc27d09d66571","/static/js/main.e99d7e0f.js.map":"05a9cbd7897a76b98061c48f0623636c9dc858486396d7df3ed93090b2565192"}}
+[debug] [2022-05-21T16:04:06.815Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/279469700840/sites/gertdotcom/versions/3694e3be5524ba38:populateFiles 200
+[debug] [2022-05-21T16:04:06.816Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/279469700840/sites/gertdotcom/versions/3694e3be5524ba38:populateFiles {"uploadRequiredHashes":["6f98a639f3a486b43f0305fecc1312a726c1951e22ce9fde71c8717bbe97bbc2"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/gertdotcom/versions/3694e3be5524ba38/files"}
+[debug] [2022-05-21T16:04:06.818Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/gertdotcom/versions/3694e3be5524ba38/files/6f98a639f3a486b43f0305fecc1312a726c1951e22ce9fde71c8717bbe97bbc2 [none]
+[debug] [2022-05-21T16:04:06.819Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/gertdotcom/versions/3694e3be5524ba38/files/6f98a639f3a486b43f0305fecc1312a726c1951e22ce9fde71c8717bbe97bbc2 [stream]
+[debug] [2022-05-21T16:04:06.824Z] [hosting][populate queue][FINAL] {"max":355,"min":355,"avg":355,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":361}
+[debug] [2022-05-21T16:04:06.827Z] [hosting] uploads queued: 1
+[debug] [2022-05-21T16:04:07.735Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/gertdotcom/versions/3694e3be5524ba38/files/6f98a639f3a486b43f0305fecc1312a726c1951e22ce9fde71c8717bbe97bbc2 200
+[debug] [2022-05-21T16:04:07.736Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/gertdotcom/versions/3694e3be5524ba38/files/6f98a639f3a486b43f0305fecc1312a726c1951e22ce9fde71c8717bbe97bbc2 [stream]
+[debug] [2022-05-21T16:04:07.737Z] [hosting][upload queue][FINAL] {"max":919,"min":919,"avg":919,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":920}
+[info] ✔  hosting[gertdotcom]: file upload complete 
+[debug] [2022-05-21T16:04:07.743Z] [hosting] deploy completed after 1644ms
+[debug] [2022-05-21T16:04:07.750Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "gertdotcom"
+    },
+    "site": "gertdotcom",
+    "version": "projects/279469700840/sites/gertdotcom/versions/3694e3be5524ba38"
+  }
+]
+[info] i  hosting[gertdotcom]: finalizing version... 
+[debug] [2022-05-21T16:04:07.751Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/279469700840/sites/gertdotcom/versions/3694e3be5524ba38 updateMask=status%2Cconfig
+[debug] [2022-05-21T16:04:07.752Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/279469700840/sites/gertdotcom/versions/3694e3be5524ba38 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2022-05-21T16:04:07.938Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/279469700840/sites/gertdotcom/versions/3694e3be5524ba38 200
+[debug] [2022-05-21T16:04:07.939Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/279469700840/sites/gertdotcom/versions/3694e3be5524ba38 {"name":"projects/279469700840/sites/gertdotcom/versions/3694e3be5524ba38","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-05-21T16:04:05.888409Z","createUser":{"email":"eggert.jason@gmail.com"},"finalizeTime":"2022-05-21T16:04:08.004520Z","finalizeUser":{"email":"eggert.jason@gmail.com"}}
+[debug] [2022-05-21T16:04:07.939Z] [hosting] finalized version for gertdotcom:[object Object]
+[info] ✔  hosting[gertdotcom]: version finalized 
+[info] i  hosting[gertdotcom]: releasing new version... 
+[debug] [2022-05-21T16:04:07.941Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/279469700840/sites/gertdotcom/releases versionName=projects%2F279469700840%2Fsites%2Fgertdotcom%2Fversions%2F3694e3be5524ba38
+[debug] [2022-05-21T16:04:07.942Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/279469700840/sites/gertdotcom/releases {"message":null}
+[debug] [2022-05-21T16:04:08.199Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/279469700840/sites/gertdotcom/releases 200
+[debug] [2022-05-21T16:04:08.200Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/279469700840/sites/gertdotcom/releases {"name":"projects/279469700840/sites/gertdotcom/releases/1653149047704263","version":{"name":"projects/279469700840/sites/gertdotcom/versions/3694e3be5524ba38","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-05-21T16:04:05.888409Z","createUser":{"email":"eggert.jason@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a-/AOh14GgNGZAJvl7gMyyWM_c00OXFnz1XJK5DNZeFQd-Psw"},"finalizeTime":"2022-05-21T16:04:08.004520Z","finalizeUser":{"email":"eggert.jason@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a-/AOh14GgNGZAJvl7gMyyWM_c00OXFnz1XJK5DNZeFQd-Psw"}},"type":"DEPLOY","releaseTime":"2022-05-21T16:04:07.704263266Z","releaseUser":{"email":"eggert.jason@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a-/AOh14GgNGZAJvl7gMyyWM_c00OXFnz1XJK5DNZeFQd-Psw"}}
+[debug] [2022-05-21T16:04:08.200Z] [hosting] release: {"name":"projects/279469700840/sites/gertdotcom/releases/1653149047704263","version":{"name":"projects/279469700840/sites/gertdotcom/versions/3694e3be5524ba38","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-05-21T16:04:05.888409Z","createUser":{"email":"eggert.jason@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a-/AOh14GgNGZAJvl7gMyyWM_c00OXFnz1XJK5DNZeFQd-Psw"},"finalizeTime":"2022-05-21T16:04:08.004520Z","finalizeUser":{"email":"eggert.jason@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a-/AOh14GgNGZAJvl7gMyyWM_c00OXFnz1XJK5DNZeFQd-Psw"}},"type":"DEPLOY","releaseTime":"2022-05-21T16:04:07.704263266Z","releaseUser":{"email":"eggert.jason@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a-/AOh14GgNGZAJvl7gMyyWM_c00OXFnz1XJK5DNZeFQd-Psw"}}
+[info] ✔  hosting[gertdotcom]: release complete 
+[info] 
+[info] ✔  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/gertdotcom/overview
+[info] Hosting URL: https://gertdotcom.web.app
